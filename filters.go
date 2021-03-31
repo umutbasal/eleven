@@ -1,6 +1,10 @@
 package main
 
-import "strings"
+import (
+	"strings"
+
+	snowballeng "github.com/kljensen/snowball/english"
+)
 
 func lowercaseFilter(tokens []string) []string {
 	r := make([]string, len(tokens))
@@ -10,10 +14,18 @@ func lowercaseFilter(tokens []string) []string {
 	return r
 }
 
-func stemEnglishFilter(tokens []string) []string {
+func stemEnglishFilterOne(tokens []string) []string {
 	r := make([]string, len(tokens))
 	for i, token := range tokens {
 		r[i] = StemEnglish(token)
+	}
+	return r
+}
+
+func stemEnglishFilter(tokens []string) []string {
+	r := make([]string, len(tokens))
+	for i, token := range tokens {
+		r[i] = snowballeng.Stem(token, false)
 	}
 	return r
 }
