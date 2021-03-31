@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"time"
 )
 
@@ -15,12 +16,12 @@ func elapsed(what string) func() {
 func main() {
 	defer elapsed("load")()
 
-	//indexAndSave("enwiki-latest.xml")
+	indexAndSave("example.xml")
 
-	//table, err := loadIndexedTable("test.json")
+	table, err := loadIndexedTable("test.json")
 
-	//	if err != nil {
-	//		log.Fatalf("couldn't load' %v", err)
-	//}
-	//log.Printf("results: %v", table.search("glock"))
+	if err != nil {
+		log.Fatalf("couldn't load' %v", err)
+	}
+	log.Printf("results: %v", table.search("glock"))
 }
