@@ -24,3 +24,13 @@ func TestStemEnglishFilter(t *testing.T) {
 	}
 
 }
+
+func TestCommonWordsFilter(t *testing.T) {
+	actual := commonWordsFilter([]string{"i", "have", "that", "eating", "problem"})
+	expected := []string{"eating", "problem"}
+
+	if !reflect.DeepEqual(actual, expected) {
+		t.Errorf("Actual %#v, expected %#v", actual, expected)
+	}
+
+}

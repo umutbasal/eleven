@@ -60,7 +60,7 @@ func (s *Stemmer) Stem(word string) string {
 
 // StemEnglish reduces english words into basic form
 func StemEnglish(word string) string {
-	s, err := NewStemmer("english")
+	s, err := NewStemmer("en")
 	if err != nil {
 		log.Printf("Error creating stemmer: " + err.Error())
 		os.Exit(1)

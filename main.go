@@ -1,7 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
+
+func elapsed(what string) func() {
+	start := time.Now()
+	return func() {
+		fmt.Printf("%s took %v\n", what, time.Since(start))
+	}
+}
 
 func main() {
-	fmt.Println("vim-go")
+	defer elapsed("load")()
+
+	//indexAndSave("enwiki-latest.xml")
+
+	//table, err := loadIndexedTable("test.json")
+
+	//	if err != nil {
+	//		log.Fatalf("couldn't load' %v", err)
+	//}
+	//log.Printf("results: %v", table.search("glock"))
 }
