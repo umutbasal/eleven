@@ -1,9 +1,9 @@
 package main
 
 import (
+	"log"
 	"strings"
 	"testing"
-	"log"
 )
 
 func TestLoadDocuments(t *testing.T) {
@@ -18,16 +18,15 @@ func TestLoadDocuments(t *testing.T) {
 	fail := "Whoop"
 
 	log.Printf("%v", doc)
-	if (!strings.Contains(actual, expected)) {
+	if !strings.Contains(actual, expected) {
 		t.Errorf("expected %s in title , actual %s", expected, actual)
 	}
 
-	if (strings.Contains(actual, fail)){
+	if strings.Contains(actual, fail) {
 		t.Errorf("did not expected %s to be in %s", fail, actual)
 	}
 
-	if (cap(doc) != 2){
+	if cap(doc) != 2 {
 		t.Errorf("expected cap 2, but got %d", cap(doc))
 	}
 }
-
