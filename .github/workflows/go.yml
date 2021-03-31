@@ -7,7 +7,6 @@ on:
     branches: [ main ]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -18,9 +17,6 @@ jobs:
       with:
         go-version: 1.15
     
-    - name: Install libstemmer-dev
-      run: sudo apt install libstemmer-dev
-
     - name: Build
       run: go build -v ./...
 
