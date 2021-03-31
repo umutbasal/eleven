@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"strings"
 	"testing"
 )
@@ -17,7 +16,6 @@ func TestLoadDocuments(t *testing.T) {
 	expected := "Klock"
 	fail := "Whoop"
 
-	log.Printf("%v", doc)
 	if !strings.Contains(actual, expected) {
 		t.Errorf("expected %s in title , actual %s", expected, actual)
 	}
