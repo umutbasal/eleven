@@ -4,7 +4,8 @@ on:
     tags:
       - v*
     branches:
-      - develop
+      - master
+      - main
   pull_request:
 jobs:
   golangci:
@@ -15,4 +16,4 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v2
         with:
-          version: v1.29
+          version: latest
