@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
 	"unsafe"
 )
 
@@ -54,4 +56,14 @@ func (s *Stemmer) Stem(word string) string {
 
 	buf := C.GoBytes(res, size)
 	return string(buf)
+}
+
+// StemEnglish reduces english words into basic form
+func StemEnglish(word string) string {
+	s, err := NewStemmer("english")
+	if err != nil {
+		log.Printf("Error creating stemmer: " + err.Error())
+		os.Exit(1)
+	}
+	return s.Stem(word)
 }
