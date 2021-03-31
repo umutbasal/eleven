@@ -13,3 +13,13 @@ func (idx index) feed(docs []document) {
 		}
 	}
 }
+
+func (idx index) search(text string) [][]int {
+	var r [][]int
+	for _, token := range analyze(text) {
+		if ids, ok := idx[token]; ok {
+			r = append(r, ids)
+		}
+	}
+	return r
+}
