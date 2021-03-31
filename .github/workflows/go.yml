@@ -17,6 +17,9 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.15
+    
+    - name: Install libstemmer-dev
+      run: sudo apt install libstemmer-dev
 
     - name: Build
       run: go build -v ./...
