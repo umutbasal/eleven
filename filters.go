@@ -30,7 +30,7 @@ func stemEnglishFilter(tokens []string) []string {
 	return r
 }
 
-var commonWords = map[string]bool{ // I wish Go had built-in sets.
+var commonWords = map[string]bool{
 	"the":  true,
 	"be":   true,
 	"to":   true,
@@ -42,6 +42,7 @@ var commonWords = map[string]bool{ // I wish Go had built-in sets.
 	"have": true,
 	"i":    true,
 	"it":   true,
+	"on":   true,
 }
 
 func commonWordsFilter(tokens []string) []string {
