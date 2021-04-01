@@ -11,7 +11,7 @@ func TestEleven(t *testing.T) {
 		t.Errorf("problem with indexing and saving %v", err)
 	}
 
-	table, err := loadIndexedTable("test.json")
+	table, err := loadIndexedTable("example.xml.json")
 	if err != nil {
 		t.Errorf("problem with loadIndexedTable %v", err)
 	}

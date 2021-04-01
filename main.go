@@ -18,7 +18,7 @@ func main() {
 
 	indexAndSave("example.xml")
 
-	table, err := loadIndexedTable("test.json")
+	table, err := loadIndexedTable("example.xml.json")
 
 	if err != nil {
 		log.Fatalf("couldn't load' %v", err)

@@ -14,7 +14,6 @@ func Test_index_feed(t *testing.T) {
 		"donut": {1, 2},
 		"glass": {1},
 		"is":    {2},
-		"on":    {1},
 		"only":  {1},
 		"plate": {1},
 	}
