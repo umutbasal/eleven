@@ -7,9 +7,10 @@ import (
 	"os"
 )
 
-func save(table index) {
+func save(table index, filename string) {
 	file, _ := json.MarshalIndent(table, "", " ")
-	_ = ioutil.WriteFile("test.json", file, 0644)
+	filename = filename + ".json"
+	_ = ioutil.WriteFile(filename, file, 0644)
 }
 
 func indexAndSave(filename string) (err error) {
@@ -19,7 +20,7 @@ func indexAndSave(filename string) (err error) {
 	}
 	table := make(index)
 	table.feed(doc)
-	save(table)
+	save(table, filename)
 	return nil
 }
 
